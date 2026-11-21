@@ -13,3 +13,5 @@ Java 17: javac --release 17 -encoding UTF-8 -d build src/PasswordValidator.java 
 Требования: docs/requirements.md; карта: docs/process.md; матрица: docs/matrix.md; журнал: docs/journal.md; приёмка: docs/acceptance.md.
 
 Фактические запуски в этой среде: OpenJDK 21; совместимость компиляции с Java 17 подтверждена --release 17. Неотправленные промпты помечены NOT_SENT.
+
+Фактический прогон на JDK 17 подтверждён: https://github.com/ariverix/prmt-final-project-skf/actions/runs/44902513986

@@ -1,0 +1,12 @@
+GitHub Actions verification, 21.11.2026
+Repository: https://github.com/ariverix/prmt-final-project-skf
+Workflow: Java 17 tests
+Verified successful run: https://github.com/ariverix/prmt-final-project-skf/actions/runs/44902513986
+Also successful run: https://github.com/ariverix/prmt-final-project-skf/actions/runs/44902506829
+
+Install JDK 17: success (Temurin 17.0.21, as shown in GitHub job log).
+Compile Java 17 project: success.
+Execute all scenarios: success (Result: 13/13 passed).
+Upload test evidence artifact: success.
+
+Local tests were run on OpenJDK 21; the GitHub Actions job independently verified runtime on JDK 17.

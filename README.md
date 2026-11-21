@@ -46,3 +46,5 @@ java -cp build ValidatorTests
 ![Повторная проверка после исправления](assets/04_study_failure.svg)
 
 GitHub Actions использует настоящий JDK 17. Статус сборки следует проверять на вкладке Actions; наличие workflow само по себе не подтверждает успешный прогон.
+
+**Проверка непосредственно на Java 17:** [GitHub Actions — 13/13, успешно](https://github.com/ariverix/prmt-final-project-skf/actions/runs/44902513986). Локальная среда проверки — OpenJDK 21; оба прогона сохранены как отдельные свидетельства.
