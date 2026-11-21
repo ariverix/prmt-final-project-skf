@@ -20,7 +20,8 @@ public class ValidatorTests {
             new Case("T10", "Abcdef#1\n", "CHAR", "regular"),
             new Case("T11", "Abcdefg1\nabc\n", "OK", "regular"),
             new Case("T12", " Abcdefg1 \n", "CHAR", "regular"),
-            new Case("T13", "", "LEN\nUPPER\nDIGIT", "EOF")
+            new Case("T13", "", "LEN\nUPPER\nDIGIT", "EOF"),
+            new Case("T14", "#\n", "LEN\nUPPER\nDIGIT\nCHAR", "all four codes in order")
     );
 
     public static void main(String[] args) throws Exception {
@@ -35,11 +36,12 @@ public class ValidatorTests {
             try (var stdin = process.getOutputStream()) {
                 stdin.write(test.input().getBytes(StandardCharsets.UTF_8));
             }
-            String actual = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8)
-                    .replace("\r\n", "\n").stripTrailing();
+            String stdout = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8)
+                    .replace("\r\n", "\n");
             String stderr = new String(process.getErrorStream().readAllBytes(), StandardCharsets.UTF_8);
             int exit = process.waitFor();
-            boolean ok = exit == 0 && actual.equals(test.expected());
+            boolean ok = exit == 0 && stderr.isEmpty() && stdout.equals(test.expected() + "\n");
+            String actual = stdout.endsWith("\n") ? stdout.substring(0, stdout.length() - 1) : stdout;
             if (ok) {
                 passed++;
             }
@@ -49,6 +51,7 @@ public class ValidatorTests {
                     "Input: " + test.input().replace("\n", "\\n") + "\n"
                             + "Expected:\n" + test.expected() + "\n"
                             + "Actual:\n" + actual + "\n"
+                            + "Stdout (escaped): " + stdout.replace("\n", "\\n") + "\n"
                             + "Exit code: " + exit + "\nStderr: " + stderr
                             + "Status: " + status + "\n", StandardCharsets.UTF_8);
             table.append(test.id()).append('\t').append(test.boundary()).append('\t')

@@ -17,17 +17,42 @@ jobs:
           java-version: '17'
       - name: Print Java version
         run: |
-          java -version
-          javac -version
+          mkdir -p evidence/ci
+          {
+            java -version
+            javac -version
+            sha256sum src/PasswordValidator.java tests/ValidatorTests.java
+          } 2>&1 | tee evidence/ci/environment.txt
       - name: Compile Java 17 project
         run: |
           mkdir -p build
+          echo 'javac --release 17 -encoding UTF-8 -d build src/PasswordValidator.java tests/ValidatorTests.java'
           javac --release 17 -encoding UTF-8 -d build src/PasswordValidator.java tests/ValidatorTests.java
+          echo 'Compilation exit: 0'
       - name: Execute all scenarios
-        run: java -cp build ValidatorTests
+        shell: bash
+        run: |
+          java -cp build ValidatorTests | tee evidence/final/runner.txt
+          java -cp build ValidatorTests > "$RUNNER_TEMP/runner-repeat.txt"
+          diff -u evidence/final/runner.txt "$RUNNER_TEMP/runner-repeat.txt"
+          echo 'Repeated runner output: identical'
+      - name: Reproduce and verify D01
+        shell: bash
+        run: |
+          mkdir -p build/d01
+          javac --release 17 -encoding UTF-8 -d build/d01 evidence/study_failure/buggy/PasswordValidator.java
+          cmp evidence/study_failure/fixed/PasswordValidator.java src/PasswordValidator.java
+          before=$(printf '%s\n' Abcdefg1 | java -cp build/d01 PasswordValidator)
+          after=$(printf '%s\n' Abcdefg1 | java -cp build PasswordValidator)
+          printf 'D01 T01 expected: OK\nBefore: %s\nAfter: %s\n' "$before" "$after" | tee evidence/ci/d01.txt
+          test "$before" = LEN
+          test "$after" = OK
       - name: Save run evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: java17-test-evidence
-          path: evidence/final/
+          path: |
+            evidence/final/
+            evidence/ci/environment.txt
+            evidence/ci/d01.txt
