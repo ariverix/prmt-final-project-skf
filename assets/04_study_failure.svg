@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="466" viewBox="0 0 1120 466">
+<rect width="1120" height="466" rx="22" fill="#f4f6fa"/>
+<rect x="30" y="30" width="1060" height="406" rx="16" fill="#151923"/>
+<path d="M30 46 Q30 30 46 30 H1074 Q1090 30 1090 46 V88 H30Z" fill="#262d39"/>
+<circle cx="58" cy="59" r="7" fill="#f65c55"/><circle cx="82" cy="59" r="7" fill="#f7b53b"/><circle cx="106" cy="59" r="7" fill="#35c96d"/>
+<text x="135" y="66" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#f3f4f8">Учебная ошибка D01</text>
+<text x="63" y="127" font-family="DejaVu Sans,sans-serif" font-size="16" fill="#afbdd1">Отдельная дефектная копия → исправленная финальная версия</text>
+<text x="65" y="180" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#80c9ff">$ T01 · length &gt; 8 · input Abcdefg1</text>
+<text x="65" y="218" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#ffbd88">LEN</text>
+<text x="65" y="256" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#80c9ff">$ T01 · length &gt;= 8 · input Abcdefg1</text>
+<text x="65" y="294" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#73dc98">OK</text>
+<text x="65" y="332" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#80c9ff">$ полный итоговый набор</text>
+<text x="65" y="370" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#eef0f5">Result: 13/13 passed</text>
+<text x="64" y="401" font-family="DejaVu Sans,sans-serif" font-size="13" fill="#9aabc7">Реальные запуски; иллюстрация оформлена по сохранённым логам в evidence/</text>
+</svg>

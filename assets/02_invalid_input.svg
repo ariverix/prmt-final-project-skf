@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="542" viewBox="0 0 1120 542">
+<rect width="1120" height="542" rx="22" fill="#f4f6fa"/>
+<rect x="30" y="30" width="1060" height="482" rx="16" fill="#151923"/>
+<path d="M30 46 Q30 30 46 30 H1074 Q1090 30 1090 46 V88 H30Z" fill="#262d39"/>
+<circle cx="58" cy="59" r="7" fill="#f65c55"/><circle cx="82" cy="59" r="7" fill="#f7b53b"/><circle cx="106" cy="59" r="7" fill="#35c96d"/>
+<text x="135" y="66" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#f3f4f8">Недопустимые строки</text>
+<text x="63" y="127" font-family="DejaVu Sans,sans-serif" font-size="16" fill="#afbdd1">Точные ответы консольной программы</text>
+<text x="65" y="180" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#80c9ff">$ printf &quot;abcdefg1\n&quot; | java -cp build PasswordValidator</text>
+<text x="65" y="218" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#ffbd88">UPPER</text>
+<text x="65" y="256" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#80c9ff">$ printf &quot;Abcdef#1\n&quot; | java -cp build PasswordValidator</text>
+<text x="65" y="294" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#ffbd88">CHAR</text>
+<text x="65" y="332" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#80c9ff">$ printf &quot;\n&quot; | java -cp build PasswordValidator</text>
+<text x="65" y="370" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#ffbd88">LEN</text>
+<text x="65" y="408" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#ffbd88">UPPER</text>
+<text x="65" y="446" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#eef0f5">DIGIT</text>
+<text x="64" y="477" font-family="DejaVu Sans,sans-serif" font-size="13" fill="#9aabc7">Реальные запуски; иллюстрация оформлена по сохранённым логам в evidence/</text>
+</svg>

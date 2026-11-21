@@ -1,0 +1,33 @@
+name: Java 17 tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Print Java version
+        run: |
+          java -version
+          javac -version
+      - name: Compile Java 17 project
+        run: |
+          mkdir -p build
+          javac --release 17 -encoding UTF-8 -d build src/PasswordValidator.java tests/ValidatorTests.java
+      - name: Execute all scenarios
+        run: java -cp build ValidatorTests
+      - name: Save run evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: java17-test-evidence
+          path: evidence/final/
