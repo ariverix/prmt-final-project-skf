@@ -1,0 +1,11 @@
+Input: abc\n
+Expected:
+LEN
+UPPER
+DIGIT
+Actual:
+LEN
+UPPER
+DIGIT
+Exit code: 0
+Stderr: Status: PASS

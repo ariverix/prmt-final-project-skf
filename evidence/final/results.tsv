@@ -1,0 +1,14 @@
+ID	Type	Expected	Actual	Status
+T01	8 characters (min)	OK	OK	PASS
+T02	16 characters (max)	OK	OK	PASS
+T03	7 characters (below min)	LEN	LEN	PASS
+T04	17 characters (above max)	LEN	LEN	PASS
+T05	regular	UPPER	UPPER	PASS
+T06	regular	DIGIT	DIGIT	PASS
+T07	regular	CHAR	CHAR	PASS
+T08	empty input	LEN/UPPER/DIGIT	LEN/UPPER/DIGIT	PASS
+T09	regular	LEN/UPPER/DIGIT	LEN/UPPER/DIGIT	PASS
+T10	regular	CHAR	CHAR	PASS
+T11	regular	OK	OK	PASS
+T12	regular	CHAR	CHAR	PASS
+T13	EOF	LEN/UPPER/DIGIT	LEN/UPPER/DIGIT	PASS

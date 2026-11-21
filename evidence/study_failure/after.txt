@@ -1,0 +1,6 @@
+Исправлена граница: >= 8 (финальная исходная версия)
+Команда: javac --release 17 -d /mnt/data/_prmtbuild/final src/PasswordValidator.java
+Тест T01, вход Abcdefg1:
+OK
+Тест T02, вход Abcdefghijklmno1:
+OK

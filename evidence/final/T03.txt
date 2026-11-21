@@ -1,0 +1,7 @@
+Input: Abcdef1\n
+Expected:
+LEN
+Actual:
+LEN
+Exit code: 0
+Stderr: Status: PASS

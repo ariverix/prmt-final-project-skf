@@ -1,0 +1,8 @@
+2026-11-21T12:03:47Z
+openjdk version "21.0.12.1" 2026-08-18
+OpenJDK Runtime Environment (build 21.0.12.1+1-1-deb13u1)
+OpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-deb13u1, mixed mode, sharing)
+javac 21.0.12.1
+javac exit: 0
+  major version: 61
+Source line count (nonblank, noncomment): 56

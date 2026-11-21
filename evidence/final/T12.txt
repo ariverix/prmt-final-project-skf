@@ -1,0 +1,7 @@
+Input:  Abcdefg1 \n
+Expected:
+CHAR
+Actual:
+CHAR
+Exit code: 0
+Stderr: Status: PASS

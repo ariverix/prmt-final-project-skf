@@ -1,0 +1,14 @@
+T01  PASS  8 characters (min)
+T02  PASS  16 characters (max)
+T03  PASS  7 characters (below min)
+T04  PASS  17 characters (above max)
+T05  PASS  regular
+T06  PASS  regular
+T07  PASS  regular
+T08  PASS  empty input
+T09  PASS  regular
+T10  PASS  regular
+T11  PASS  regular
+T12  PASS  regular
+T13  PASS  EOF
+Result: 13/13 passed
