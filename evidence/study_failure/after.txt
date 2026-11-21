@@ -1,6 +1,25 @@
-Исправлена граница: >= 8 (финальная исходная версия)
-Команда: javac --release 17 -d /mnt/data/_prmtbuild/final src/PasswordValidator.java
-Тест T01, вход Abcdefg1:
-OK
-Тест T02, вход Abcdefghijklmno1:
-OK
+D01 / fixed / Java 21, --release 17
+SHA-256: 1e5d2ec30a4f5c61f9bfa25e5ca2b3c1817f7da99608f64eeca8b6ffe4ebafae
+$ java -cp build PasswordValidator
+stdin: "Abcdefg1\n"
+Expected: OK
+Actual: OK
+Exit code: 0
+
+$ java -cp build ValidatorTests
+T01  PASS  8 characters (min)
+T02  PASS  16 characters (max)
+T03  PASS  7 characters (below min)
+T04  PASS  17 characters (above max)
+T05  PASS  regular
+T06  PASS  regular
+T07  PASS  regular
+T08  PASS  empty input
+T09  PASS  regular
+T10  PASS  regular
+T11  PASS  regular
+T12  PASS  regular
+T13  PASS  EOF
+T14  PASS  all four codes in order
+Result: 14/14 passed
+Runner exit: 0

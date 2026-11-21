@@ -3,5 +3,6 @@ Expected:
 CHAR
 Actual:
 CHAR
+Stdout (escaped): CHAR\n
 Exit code: 0
 Stderr: Status: PASS

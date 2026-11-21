@@ -3,5 +3,6 @@ Expected:
 LEN
 Actual:
 LEN
+Stdout (escaped): LEN\n
 Exit code: 0
 Stderr: Status: PASS

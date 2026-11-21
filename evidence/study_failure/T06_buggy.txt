@@ -1,0 +1,9 @@
+Input: Abcdefgh\n
+Expected:
+DIGIT
+Actual:
+LEN
+DIGIT
+Stdout (escaped): LEN\nDIGIT\n
+Exit code: 0
+Stderr: Status: FAIL

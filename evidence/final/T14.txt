@@ -1,0 +1,14 @@
+Input: #\n
+Expected:
+LEN
+UPPER
+DIGIT
+CHAR
+Actual:
+LEN
+UPPER
+DIGIT
+CHAR
+Stdout (escaped): LEN\nUPPER\nDIGIT\nCHAR\n
+Exit code: 0
+Stderr: Status: PASS

@@ -1,0 +1,6 @@
+$ java -cp build PasswordValidator
+stdin: "Abcdef#1\n"
+stdout:
+CHAR
+stderr: empty
+Exit code: 0

@@ -3,5 +3,6 @@ Expected:
 DIGIT
 Actual:
 DIGIT
+Stdout (escaped): DIGIT\n
 Exit code: 0
 Stderr: Status: PASS

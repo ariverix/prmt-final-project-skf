@@ -1,50 +1,40 @@
-# Password Validator — итоговый проект Skillfactory
+# Консольный валидатор пароля
 
-Консольная учебная программа на Java 17. Проверяет одну вымышленную строку: длину 8–16, наличие заглавной латинской буквы, цифры и отсутствие посторонних символов. Выводит `OK` или коды `LEN`, `UPPER`, `DIGIT`, `CHAR` в указанном порядке.
+Итоговый проект Skillfactory по дисциплине «Промпт-инжиниринг для разработчиков». Java 17, стандартная библиотека. Программа читает первую строку stdin и выводит `OK` либо коды нарушений в порядке `LEN`, `UPPER`, `DIGIT`, `CHAR`. Демонстрационные строки вымышлены.
 
-## Компиляция и запуск
+## Сборка и запуск
+
+Из корня проекта с JDK 17 в PATH:
+
 ```sh
 javac --release 17 -encoding UTF-8 -d build src/PasswordValidator.java tests/ValidatorTests.java
 java -cp build PasswordValidator
 java -cp build ValidatorTests
 ```
-Тестовый класс сохраняет фактические результаты 13 сценариев в `evidence/final/`.
 
-## Материалы
-- `src/` — программа; `tests/` — проверочный код отдельно.
-- `docs/requirements.md` — требования R01–R10 и критерии завершения.
-- `docs/process.md` — шаги A–F, контрольные точки.
-- `docs/journal.md` — записи только фактически отправленных запросов.
-- `prompts/` — запрос Q01 и шаблоны, явно помеченные `NOT_SENT`.
-- `evidence/` — сохранённые запуски и разбор учебного дефекта.
-- `docs/acceptance.md` — решение и ограничения.
+При интерактивном запуске введите `Abcdefg1` и нажмите Enter. Ответ — `OK`. При вводе `#` будут выведены четыре кода. Тесты выполняют 14 отдельных запусков и пишут фактические результаты в `evidence/final/`.
 
-**Объём исходника:** 56 непустых некомментированных строк. Компиляция в формат Java 17 подтверждена `--release 17`; фактические запуски в текущей среде — на OpenJDK 21 (см. evidence/compile.txt).
+## Проверка результата
 
-**Важно для сдачи:** аудит схемы в отдельном чате ещё не проводился. Подготовленный, но не отправленный промпт не является свидетельством выполненного задания. Нельзя выдавать его за фактический запрос.
+**14/14 на JDK 17**, включая длину 7/8/16/17, пробелы, пустую строку, EOF, игнорирование второй строки и точный порядок всех четырёх ошибок. В программе 56 непустых строк без комментариев. [GitHub Actions](https://github.com/ariverix/prmt-final-project-skf/actions/runs/44907573229) · [лог Java 17](evidence/ci/java17_final_run.txt).
 
-**Учебный проект:** реальные пароли и другие чувствительные данные не используйте.
+| Материал | Где находится |
+| --- | --- |
+| Требования и матрица | [R01–R10](docs/requirements.md) · [Матрица](docs/matrix.md) · [Шкала Skillfactory](docs/skillfactory_matrix.md) |
+| Набор проверок | [T01–T14 и V01/V02](tests/scenarios.md) · [Фактические результаты](evidence/final/results.tsv) |
+| Схема и аудит | [P2](docs/process.md) · [Пакет передачи](docs/handoff.md) · [Аудит](evidence/audit/Q02_response.md) · [Решения](evidence/audit/decisions.md) |
+| Промпты и журнал | [Журнал](docs/journal.md) · [Промпты](prompts/) |
+| Учебный сбой D01 | [Карточка и логи до/после](evidence/study_failure/card.md) |
+| Приёмка | [Акт](docs/acceptance.md) · [Ограничения и сдача](docs/limitations.md) |
 
-## Демонстрация работы
+## Демонстрация
 
-Иллюстрации сформированы из **фактического вывода** выполненных консольных команд. Они не изображают несуществующий графический интерфейс.
+![Иллюстрация фактического вывода для правильного ввода](assets/illustrations/02_valid_input.png)
 
-**Корректный ввод**
+![Иллюстрация фактического вывода при нарушении всех правил](assets/illustrations/04_multiple_violations.png)
 
-![Восьмисимвольный ввод проходит](assets/01_valid_input.svg)
+[Все изображения и первичные логи](assets/README.md).
 
-**Ошибки**
+## Комплект для сдачи
 
-![Запрещённые символы и пустой ввод](assets/02_invalid_input.svg)
-
-**Проверки**
-
-![Все 13 сценариев](assets/03_test_runner.svg)
-
-**Учебный дефект и исправление**
-
-![Повторная проверка после исправления](assets/04_study_failure.svg)
-
-GitHub Actions использует настоящий JDK 17. Статус сборки следует проверять на вкладке Actions; наличие workflow само по себе не подтверждает успешный прогон.
-
-**Проверка непосредственно на Java 17:** [GitHub Actions — 13/13, успешно](https://github.com/ariverix/prmt-final-project-skf/actions/runs/44902513986). Локальная среда проверки — OpenJDK 21; оба прогона сохранены как отдельные свидетельства.
+[Отчёт DOCX](https://github.com/ariverix/prmt-final-project-skf/blob/main/submission/Отчет_Итоговый_проект.docx) · [Отчёт PDF](https://github.com/ariverix/prmt-final-project-skf/blob/main/submission/Отчет_Итоговый_проект.pdf) · [ZIP](https://github.com/ariverix/prmt-final-project-skf/blob/main/submission/Skillfactory_Prompt_Engineering_Final.zip).

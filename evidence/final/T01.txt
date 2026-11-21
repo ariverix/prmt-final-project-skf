@@ -3,5 +3,6 @@ Expected:
 OK
 Actual:
 OK
+Stdout (escaped): OK\n
 Exit code: 0
 Stderr: Status: PASS

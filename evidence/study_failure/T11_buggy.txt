@@ -1,0 +1,8 @@
+Input: Abcdefg1\nabc\n
+Expected:
+OK
+Actual:
+LEN
+Stdout (escaped): LEN\n
+Exit code: 0
+Stderr: Status: FAIL

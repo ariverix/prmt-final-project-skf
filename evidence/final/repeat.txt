@@ -1,0 +1,2 @@
+Two consecutive runs: 14/14 and 14/14.
+Console output and all 15 scenario/result files were byte-identical.

@@ -1,8 +1,11 @@
-2026-11-21T12:03:47Z
-openjdk version "21.0.12.1" 2026-08-18
-OpenJDK Runtime Environment (build 21.0.12.1+1-1-deb13u1)
-OpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-deb13u1, mixed mode, sharing)
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)
 javac 21.0.12.1
-javac exit: 0
-  major version: 61
-Source line count (nonblank, noncomment): 56
+$ javac --release 17 -encoding UTF-8 -d build src/PasswordValidator.java tests/ValidatorTests.java
+Exit code: 0
+major version: 61
+V02. src/PasswordValidator.java: 56 non-blank lines; no comments or package; imports java.io only.
+Tests are separate: tests/ValidatorTests.java.
+SHA-256 src/PasswordValidator.java: 1e5d2ec30a4f5c61f9bfa25e5ca2b3c1817f7da99608f64eeca8b6ffe4ebafae
+SHA-256 tests/ValidatorTests.java: 8bc4b752fb14da61ec12fe5b4c102e8449bb8fc2d086300f157575de65e78442

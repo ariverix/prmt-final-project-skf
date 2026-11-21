@@ -11,4 +11,5 @@ T10  PASS  regular
 T11  PASS  regular
 T12  PASS  regular
 T13  PASS  EOF
-Result: 13/13 passed
+T14  PASS  all four codes in order
+Result: 14/14 passed

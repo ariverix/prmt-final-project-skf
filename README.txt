@@ -1,17 +1,20 @@
-PASSWORD VALIDATOR — итоговый учебный проект
+КОНСОЛЬНЫЙ ВАЛИДАТОР ПАРОЛЯ
+Итоговый проект Skillfactory. Java 17, только стандартная библиотека.
 
-Java 17: javac --release 17 -encoding UTF-8 -d build src/PasswordValidator.java tests/ValidatorTests.java
-Запуск: java -cp build PasswordValidator
-Тесты: java -cp build ValidatorTests
+Из корня архива с JDK 17 в PATH:
+  javac --release 17 -encoding UTF-8 -d build src/PasswordValidator.java tests/ValidatorTests.java
+  java -cp build PasswordValidator
+  java -cp build ValidatorTests
 
-Ввод: одна первая строка stdin. Длина 8–16, A-Z/a-z/0-9, нужна заглавная латинская буква и цифра. Выход: OK либо LEN, UPPER, DIGIT, CHAR (по одному коду в строке).
+Введите одну синтетическую строку и нажмите Enter. Для Abcdefg1 ответ OK.
+Для # — LEN, UPPER, DIGIT, CHAR на отдельных строках в указанном порядке.
+Пустая строка и EOF дают LEN, UPPER, DIGIT. Реальные пароли не используйте.
 
-Основной код: src/PasswordValidator.java — 56 непустых некомментированных строк.
-Тестовый код отдельно в tests/ValidatorTests.java.
+src/PasswordValidator.java — финальная программа, 56 строк.
+tests/ValidatorTests.java — отдельный раннер, tests/scenarios.md — условия T01–T14.
+docs/ — требования, схема, журнал, матрицы, контрольные точки и акт.
+prompts/ — версии запросов и шаблоны с отметками.
+evidence/ — аудит, логи, учебный сбой D01 с версиями до/после.
+assets/ — изображения и подписи. Отчёт передаётся отдельным файлом.
 
-Доказательства: evidence/compile.txt, evidence/final/, evidence/study_failure/.
-Требования: docs/requirements.md; карта: docs/process.md; матрица: docs/matrix.md; журнал: docs/journal.md; приёмка: docs/acceptance.md.
-
-Фактические запуски в этой среде: OpenJDK 21; совместимость компиляции с Java 17 подтверждена --release 17. Неотправленные промпты помечены NOT_SENT.
-
-Фактический прогон на JDK 17 подтверждён: https://github.com/ariverix/prmt-final-project-skf/actions/runs/44902513986
+Подтверждение JDK 17: https://github.com/ariverix/prmt-final-project-skf/actions/runs/44907573229

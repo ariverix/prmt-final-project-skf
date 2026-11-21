@@ -1,0 +1,9 @@
+Input: Abcdef 1\n
+Expected:
+CHAR
+Actual:
+LEN
+CHAR
+Stdout (escaped): LEN\nCHAR\n
+Exit code: 0
+Stderr: Status: FAIL

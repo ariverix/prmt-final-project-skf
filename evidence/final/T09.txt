@@ -7,5 +7,6 @@ Actual:
 LEN
 UPPER
 DIGIT
+Stdout (escaped): LEN\nUPPER\nDIGIT\n
 Exit code: 0
 Stderr: Status: PASS
